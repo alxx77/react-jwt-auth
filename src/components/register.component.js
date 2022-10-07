@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
-import CheckButton from "react-validation/build/button";
+//import Form from "react-validation/build/form";
+//import Input from "react-validation/build/input";
+//import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 
 import AuthService from "../services/auth.service";
@@ -89,9 +89,10 @@ export default class Register extends Component {
       successful: false
     });
 
-    this.form.validateAll();
+    //this.form.validateAll();
 
-    if (this.checkBtn.context._errors.length === 0) {
+    // if (this.checkBtn.context._errors.length === 0) {
+    if (true) {
       AuthService.register(
         this.state.username,
         this.state.email,
@@ -130,7 +131,7 @@ export default class Register extends Component {
             className="profile-img-card"
           />
 
-          <Form
+          <form
             onSubmit={this.handleRegister}
             ref={c => {
               this.form = c;
@@ -140,7 +141,7 @@ export default class Register extends Component {
               <div>
                 <div className="form-group">
                   <label htmlFor="username">Username</label>
-                  <Input
+                  <input
                     type="text"
                     className="form-control"
                     name="username"
@@ -152,7 +153,7 @@ export default class Register extends Component {
 
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
-                  <Input
+                  <input
                     type="text"
                     className="form-control"
                     name="email"
@@ -164,7 +165,7 @@ export default class Register extends Component {
 
                 <div className="form-group">
                   <label htmlFor="password">Password</label>
-                  <Input
+                  <input
                     type="password"
                     className="form-control"
                     name="password"
@@ -194,13 +195,13 @@ export default class Register extends Component {
                 </div>
               </div>
             )}
-            <CheckButton
+            {/* <CheckButton
               style={{ display: "none" }}
               ref={c => {
                 this.checkBtn = c;
               }}
-            />
-          </Form>
+            /> */}
+          </form>
         </div>
       </div>
     );

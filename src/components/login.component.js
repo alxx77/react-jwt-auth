@@ -1,7 +1,7 @@
 import React, { Component } from "react"
-import Form from "react-validation/build/form"
-import Input from "react-validation/build/input"
-import CheckButton from "react-validation/build/button"
+//import Form from "react-validation/build/form"
+//import Input from "react-validation/build/input"
+//import CheckButton from "react-validation/build/button"
 
 import AuthService from "../services/auth.service"
 
@@ -52,9 +52,10 @@ class Login extends Component {
       loading: true,
     })
 
-    this.form.validateAll()
+    //this.form.validateAll()
 
-    if (this.checkBtn.context._errors.length === 0) {
+    // if (this.checkBtn.context._errors.length === 0) {
+    if (true) {
       AuthService.login(this.state.username, this.state.password).then(
         () => {
           this.props.router.navigate("/profile")
@@ -91,7 +92,7 @@ class Login extends Component {
             className="profile-img-card"
           />
 
-          <Form
+          <form
             onSubmit={this.handleLogin}
             ref={(c) => {
               this.form = c
@@ -99,7 +100,7 @@ class Login extends Component {
           >
             <div className="form-group">
               <label htmlFor="username">Username</label>
-              <Input
+              <input
                 type="text"
                 className="form-control"
                 name="username"
@@ -111,7 +112,7 @@ class Login extends Component {
 
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <Input
+              <input
                 type="password"
                 className="form-control"
                 name="password"
@@ -140,13 +141,13 @@ class Login extends Component {
                 </div>
               </div>
             )}
-            <CheckButton
+            {/* <CheckButton
               style={{ display: "none" }}
               ref={(c) => {
                 this.checkBtn = c
               }}
-            />
-          </Form>
+            /> */}
+          </form>
         </div>
       </div>
     )
